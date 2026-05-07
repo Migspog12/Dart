@@ -19,13 +19,23 @@ class contabancaria {
   void mostrarSaldo(){
     print("saldo atual: $saldo");
   }
+  
+  void empestimo(double valor){
+    double limite = 5000;
+    if(valor <= limite){
+      saldo += valor;
+    }else{
+      print("emprestimo nao autorizado");
+    }
+  }
 }
 
 void main(){
-  contabancaria conta = contabancaria("ana",  1000);
+  contabancaria conta = contabancaria("ana", 1000);
 
   conta.depositar(500);
   conta.sacar(300);
+  conta.empestimo(4000);
   conta.mostrarSaldo();
 }
 
